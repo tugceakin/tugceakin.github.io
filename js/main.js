@@ -79,4 +79,8 @@ $(document).ready(function() {
       home.prepend(starDiv);
     }
 
+    //Make nav link white after click
+    $('.navbar a').click(function(e) {
+        $(this).css({'color': 'white'});
+    })
 });

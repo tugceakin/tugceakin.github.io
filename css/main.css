@@ -163,8 +163,12 @@ h1, h2, h3, h4, h5, h6 {
     padding: 75px 0;
     background: #fff;
 }
+#page-port{
+    padding-bottom: 75px;
+}
 #page-contact {
     padding: 75px 0;
+    padding-top: 15px;
     background: #ea7591;
 }
 #page-contact .contact-info p {
