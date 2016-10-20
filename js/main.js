@@ -83,4 +83,14 @@ $(document).ready(function() {
     $('.navbar a').click(function(e) {
         $(this).css({'color': 'white'});
     })
+
+    $('.navbar a').on( "mouseenter", function(e) {
+        $(this).css({'color': '#3498db'});
+    });
+
+    $('.navbar a').on( "mouseleave", function(e) {
+        $(this).css({'color': 'white'});
+    });
+
+
 });
