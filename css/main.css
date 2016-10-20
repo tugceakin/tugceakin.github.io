@@ -1,7 +1,4 @@
 /* ==========================================================================
-   Articulate v1.0
-   ========================================================================== */
-/* ==========================================================================
    Base styles
    ========================================================================== */
 
@@ -47,7 +44,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
 }
 .navbar-default {
-    background: rgba(255, 255, 255, 0.85);
+    background: transparent; /*rgba(255, 255, 255, 0.85);*/
     border: none;
     color: #777;
     text-transform: uppercase;
@@ -61,14 +58,27 @@ h1, h2, h3, h4, h5, h6 {
     list-style: none;
     display: inline-block;
     float: none;
-    font-size: 1em;
+    font-size: 1.2em;
     font-weight: bold;
+    color: white;
+}
+.navbar-default .navbar-nav>li>a {
+    color: white;
 }
 .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
     background-color: transparent;
 }
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
     background: none;
+}
+.navbar-nav>li {
+    float: left;
+}
+.is-sticky .navbar{
+  background-color:rgba(28, 59, 118, 0.7);
+}
+.is-sticky .navbar a{
+  opacity: 1;
 }
 /* ==========================================================================
   Layout
@@ -84,6 +94,7 @@ h1, h2, h3, h4, h5, h6 {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    margin-top:-55px;
 }
 #page-welcome header {
     color: #fff;
@@ -98,25 +109,43 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1em;
     text-transform: uppercase;
 }
-#page-welcome header p {
+#page-welcome header p.home-role {
     font-size: 2em;
+    display: inline-block;
+    margin-top: 5px;
+
+    margin-bottom: 5px;
+    padding: 0 8px;
+    letter-spacing: 0.1em;
+    line-height: 2em;
+}
+#page-welcome header p.home-location {
+    font-size: 1.5em;
     display: inline-block;
     margin-bottom: 5px;
     padding: 0 8px;
     letter-spacing: 0.1em;
-    line-height: 3em;
-    text-transform: uppercase;
+    line-height: 2em;
+
 }
 #page-profile {
     padding: 75px 0;
     background: #fff;
 }
 #page-profile .profile {
-    border: 5px solid #333;
-    /*width: 225px;*/
+    border: 2px solid #1c3b76;
+    border-radius: 50%;
+    width: 150px;
     /*height: 225px;*/
-    margin: 0 20px 20px 0;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    /*margin: 20px 20px;*/
 }
+#page-profile .profile img{
+  border-radius: 50%;
+}
+
 #page-skills {
     padding: 75px 0;
     background: #f7f7f7;
@@ -136,9 +165,32 @@ h1, h2, h3, h4, h5, h6 {
 }
 #page-contact {
     padding: 75px 0;
+    background: #ea7591;
 }
 #page-contact .contact-info p {
     font-size: 1.2em;
+}
+
+#page-contact #email{
+  margin-top: 12px;
+  font-size: 1.5em;
+}
+
+#page-contact #email a{
+  color: white;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+#page-contact #email a:hover{
+  color: #8ccb9e;
+}
+
+.sky-background{
+  background-image: linear-gradient(-180deg, #1C3B76 0%, #44869A 40%, #8CCB9E 73%, #FFE184 92%, #EA7591 100%);
 }
 /* ==========================================================================
    Portfolio
@@ -224,6 +276,19 @@ h1, h2, h3, h4, h5, h6 {
     -ms-transition-duration: 0s;
     -o-transition-duration: 0s;
     transition-duration: 0s;
+}
+
+.portfolio-pr-desc{
+  margin: 15px;
+}
+
+#page-port h2{
+  text-align: center;
+}
+
+#page-port .btn-lg{
+  padding: 8px 16px;
+  margin-right: 5px;
 }
 /* ==========================================================================
    Vegas slider
@@ -435,7 +500,7 @@ label.valid {
    ========================================================================== */
 
 .social-icons .btn {
-    margin-right: 15px;
+    margin-right: 0px;
 }
 .social-icons {
     padding-top: 10px;
@@ -559,6 +624,33 @@ label.valid {
     margin: 15px;
 }
 
-#androidModal, #androidModal p, #marketModal, #marketModal p, #movieModal, #movieModal p, #myModal, #myModal p {
+#androidModal, #androidModal p, #marketModal, #marketModal p,
+#movieModal, #movieModal p, #myModal, #myModal p,
+#lineupModal, #lineupModal p {
     font-size: 1.3em;
+}
+
+.star{
+  position: absolute;
+  opacity:0;
+  width: 5px;
+  height: 5px;
+  transform: rotate(45deg);
+  /*margin: 0 auto;
+  margin-top: 20%;
+  margin-left: 70%;*/
+  background: white;
+  animation:  scale-glitter 1s infinite alternate;
+}
+@keyframes scale-glitter {
+  0%   {
+        opacity:0;
+
+    transform: scale(0.2) rotate(45deg);
+  }
+
+  100% {
+opacity:1;
+    transform: scale(1.3) rotate(45deg);
+  }
 }

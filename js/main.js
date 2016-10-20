@@ -46,30 +46,6 @@ $(document).ready(function() {
         });
     });
 
-
-    /* Magnific Popup */
-//    $('.grid-wrapper').magnificPopup({
-////        delegate: 'a',
-////        type: 'image',
-////        gallery: {
-////            enabled: true
-////        }
-//        type: 'inline',
-//
-//        fixedContentPos: false,
-//        fixedBgPos: true,
-//
-//        overflowY: 'auto',
-//
-//        closeBtnInside: true,
-//        preloader: false,
-//
-//        midClick: true,
-//        removalDelay: 300,
-//        mainClass: 'my-mfp-zoom-in'
-//    });
-
-
     /* Sticky menu */
     $(".navbar").sticky({
         topSpacing: 0
@@ -86,43 +62,21 @@ $(document).ready(function() {
         easing: "swing"
     });
 
-    /* Charts*/
-
-    $('.chart').waypoint(function() {
-        $(this).easyPieChart({
-            barColor: '#3498db',
-            size: '150',
-            easing: 'easeOutBounce',
-            onStep: function(from, to, percent) {
-                //$(this.el).find('.percent').text(Math.round(percent));
-                $(this.el).find('.percent').text('');
-            }
-        });
-    }, {
-        triggerOnce: true,
-        offset: 'bottom-in-view'
-    });
-
-
-    /* VEGAS Home Slider */
-	
-	    $('#page-welcome').vegas({
-        slides: [
-            { src: 'img/slider/01.jpg' },
-            { src: 'img/slider/02.jpg' },
-            { src: 'img/slider/03.jpg' },
-			{ src: 'img/slider/04.jpg' }
-        ],
-    overlay: true
-});
-
-    $("#vegas-next").click(function() {
-        $('#page-welcome').vegas('next');
-    });
-    $("#vegas-prev").click(function() {
-       $('#page-welcome').vegas('previous');
-    });
-
-
+    //Insert stars
+    var posArr = [[10, 30], [20,70], [15,80], [30,40], [40, 10],
+                  [15, 5], [5, 15], [22, 22], [8, 82], [26, 90],
+                  [35, 77], [6, 60]];
+    for(var i=0; i<12; i++){
+      var home = $("#page-welcome");
+      var starDiv = $('<div class="star"></div>');
+      var delay = Math.random() * 2;
+      starDiv.css({
+        'margin-top': posArr[i][0] + '%',
+        'margin-left': posArr[i][1] + '%',
+        '-webkit-animation-delay': delay + 's',
+        'animation-delay' : delay + 's'
+      });
+      home.prepend(starDiv);
+    }
 
 });
