@@ -82,6 +82,9 @@ $(document).ready(function() {
     //Make nav link white after click
     $('.navbar a').click(function(e) {
         $(this).css({'color': 'white'});
+        $("body, html").animate({ 
+          scrollTop: $( '#'+e.target.dataset.scroll ).offset().top 
+        }, 600);
     })
 
     $('.navbar a').on( "mouseenter", function(e) {
